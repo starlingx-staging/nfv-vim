@@ -1,0 +1,11 @@
+%global _sysconfdir '/usr/local/etc'
+# nfv-vim
+install -d -m 755 %{buildroot}/usr/lib/ocf/resource.d/nfv
+install -p -D -m 755 %{subdir}/scripts/vim %{buildroot}/usr/lib/ocf/resource.d/nfv/vim
+install -p -D -m 755 %{subdir}/scripts/vim-api %{buildroot}/usr/lib/ocf/resource.d/nfv/vim-api
+install -p -D -m 755 %{subdir}/scripts/vim-webserver %{buildroot}/usr/lib/ocf/resource.d/nfv/vim-webserver
+install -d -m 755 %{buildroot}/usr/local/etc/nfv/
+install -d -m 755 %{buildroot}/usr/local/etc/nfv/vim/
+install -p -D -m 600 %{subdir}/nfv_vim/config.ini %{buildroot}/%{_sysconfdir}/nfv/vim/config.ini
+install -p -D -m 600 %{subdir}/nfv_vim/debug.ini %{buildroot}/%{_sysconfdir}/nfv/vim/debug.ini
+%clean

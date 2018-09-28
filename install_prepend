@@ -1,0 +1,5 @@
+%global subdir 'nfv/nfv-vim'
+sed -i -e 's/${sysconfdir}/\/usr\/local\/etc/g' %{subdir}/scripts/vim
+sed -i -e 's/${sysconfdir}/\/usr\/local\/etc/g' %{subdir}/scripts/vim-api
+sed -i -e 's/${sysconfdir}/\/usr\/local\/etc/g' %{subdir}/scripts/vim-webserver
+sed -i -e 's/${sysconfdir}/\/usr\/local\/etc/g' %{subdir}/nfv_vim/config.ini
